@@ -44,6 +44,7 @@ class MainApp extends StatelessWidget {
                   ), 
                 ),
                 Image(image: AssetImage('assets/${biodata["image"] ?? ''}')),
+                coba 
             ]),
         ),
       ),
