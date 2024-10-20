@@ -9,7 +9,7 @@ class MainApp extends StatelessWidget {
     final biodata = <String, String>{};
 
     MainApp({super.key}){
-      biodata['name'] = 'Achmad Akbar';
+      biodata['name'] = 'Akbar Riawan';
       biodata['email'] = 'akbar@gmail.com';
       biodata['phone'] = '00822281982';
       biodata['image'] = 'gambar.jpg';
