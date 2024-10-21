@@ -9,10 +9,10 @@ class MainApp extends StatelessWidget {
     final biodata = <String, String>{};
 
     MainApp({super.key}){
-      biodata['name'] = 'Achmad Akbar R';
+      biodata['name'] = 'Rumah Makan Sedap Rasa';
       biodata['email'] = 'akbar@gmail.com';
       biodata['phone'] = '00822281982';
-      biodata['image'] = 'gambar.jpg';
+      biodata['image'] = 'resto.jpg';
       biodata['hobby'] = 'gaming';
       biodata['addr'] = 'pustim 11';
       biodata['desc'] = '''lorem ipsum lorem ipsum lorem ipsum lorem ipsum ''';
@@ -22,9 +22,9 @@ class MainApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: "Aplikasi Biodata",
+      title: "Rm. Sedap Rasa",
       home: Scaffold(
-        appBar: AppBar(title: const Text("Aplikasi Biodata")),
+        appBar: AppBar(title: const Text("Rm. Sedap Rasa")),
         body: SingleChildScrollView(
           padding: EdgeInsets.all(20),
           child: Column(
@@ -44,9 +44,32 @@ class MainApp extends StatelessWidget {
                   ), 
                 ),
                 Image(image: AssetImage('assets/${biodata["image"] ?? ''}')),
+                SizedBox(height: 10),
+                Row(children: [
+                  btnContact(Icons.alternate_email, Colors.green[900]),
+                  btnContact(Icons.mark_email_unread_rounded, Colors.blueAccent),
+                  btnContact(Icons.phone, Colors.deepPurple),
+                   
+                ],
+                ),
+                SizedBox(height: 10),
             ]),
         ),
       ),
     );
+  }
+
+  Expanded btnContact(IconData icon, var color) {
+    return Expanded(
+                  child: ElevatedButton(onPressed: (){},
+                   child: Icon(icon),
+                   style: ElevatedButton.styleFrom(
+                    backgroundColor: color,
+                    foregroundColor: Colors.white,
+                    textStyle: TextStyle(
+                      fontWeight: FontWeight.bold, color: Colors.white),
+                   )
+                   ),
+                );
   }
 }
